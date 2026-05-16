@@ -234,15 +234,15 @@ public class HarvestGoddess extends PEToggleItem implements IPedestalItem {
 		return false;
 	}
 
-	//@NotNull
-	//@Override
-	//public List<Component> getPedestalDescription(float tickRate) {
-	//	List<Component> list = new ArrayList<>();
-	//	if (ProjectEConfig.server.cooldown.pedestal.harvest.get() != -1) {
-	//		list.add(PELang.PEDESTAL_HARVEST_GODDESS_1.translateColored(ChatFormatting.BLUE));
-	//		list.add(PELang.PEDESTAL_HARVEST_GODDESS_2.translateColored(ChatFormatting.BLUE));
-	//		list.add(PELang.PEDESTAL_HARVEST_GODDESS_3.translateColored(ChatFormatting.BLUE, MathUtils.tickToSecFormatted(ProjectEConfig.server.cooldown.pedestal.harvest.get(), tickRate)));
-	//	}
-	//	return list;
-	//}
+	@NotNull
+	@Override
+	public List<Component> getPedestalDescription(float tickRate) {
+		List<Component> list = new ArrayList<>();
+		if (ProjectEConfig.server.cooldown.pedestal.harvest.get() != -1) {
+			list.add(PELang.PEDESTAL_HARVEST_GODDESS_1.translateColored(ChatFormatting.BLUE));
+			list.add(PELang.PEDESTAL_HARVEST_GODDESS_2.translateColored(ChatFormatting.BLUE));
+			list.add(PELang.PEDESTAL_HARVEST_GODDESS_3.translateColored(ChatFormatting.BLUE, MathUtils.tickToSecFormatted(ProjectEConfig.server.cooldown.pedestal.harvest.get(), tickRate)));
+		}
+		return list;
+	}
 }
