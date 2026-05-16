@@ -46,26 +46,26 @@ public class GemLegs extends GemArmorBase {
 		return lastJumpTracker.containsKey(player.getId()) && player.level().getGameTime() - lastJumpTracker.get(player.getId()) < 5;
 	}
 
-	@Override
-	public void inventoryTick(@NotNull ItemStack stack, @NotNull Level level, @NotNull Entity entity, int slot, boolean isHeld) {
-		super.inventoryTick(stack, level, entity, slot, isHeld);
-		if (isArmorSlot(slot) && entity instanceof Player player) {
-			if (level.isClientSide) {
-				if (player.isSecondaryUseActive() && !player.onGround() && player.getDeltaMovement().y() > -8 && !jumpedRecently(player)) {
-					player.addDeltaMovement(DOWNWARD_MOVEMENT);
-				}
-			}
-			if (player.isSecondaryUseActive()) {
-				WorldHelper.repelEntitiesSWRG(level, player.getBoundingBox().inflate(3.5), player);
-				if (!level.isClientSide && player.getDeltaMovement().y() < -0.08) {
-					for (Entity e : player.level().getEntities(player,
-							player.getBoundingBox().move(player.getDeltaMovement()).inflate(2.0D),
-							ent -> ent.isAlive() && ent.isPickable() && ent instanceof LivingEntity
-					)) {
-						e.hurt(level.damageSources().playerAttack(player), (float) -player.getDeltaMovement().y() * 6F);
-					}
-				}
-			}
-		}
-	}
+	//@Override
+	//public void inventoryTick(@NotNull ItemStack stack, @NotNull Level level, @NotNull Entity entity, int slot, boolean isHeld) {
+	//	super.inventoryTick(stack, level, entity, slot, isHeld);
+	//	if (isArmorSlot(slot) && entity instanceof Player player) {
+	//		if (level.isClientSide) {
+	//			if (player.isSecondaryUseActive() && !player.onGround() && player.getDeltaMovement().y() > -8 && !jumpedRecently(player)) {
+	//				//player.addDeltaMovement(DOWNWARD_MOVEMENT);
+	//			}
+	//		}
+	//		if (player.isSecondaryUseActive()) {
+	//			WorldHelper.repelEntitiesSWRG(level, player.getBoundingBox().inflate(3.5), player);
+	//			if (!level.isClientSide && player.getDeltaMovement().y() < -0.08) {
+	//				for (Entity e : player.level().getEntities(player,
+	//						player.getBoundingBox().move(player.getDeltaMovement()).inflate(2.0D),
+	//						ent -> ent.isAlive() && ent.isPickable() && ent instanceof LivingEntity
+	//				)) {
+	//					e.hurt(level.damageSources().playerAttack(player), (float) -player.getDeltaMovement().y() * 6F);
+	//				}
+	//			}
+	//		}
+	//	}
+	//}
 }
