@@ -9,8 +9,8 @@ import net.minecraft.world.level.material.MapColor;
 import org.jetbrains.annotations.NotNull;
 
 public enum EnumMatterType implements StringRepresentable, IMatterType {
-	DARK_MATTER("dark_matter", 3, 14, 12, PETags.Blocks.INCORRECT_FOR_DARK_MATTER_TOOL, MapColor.COLOR_BLACK),
-	RED_MATTER("red_matter", 4, 16, 14, PETags.Blocks.INCORRECT_FOR_RED_MATTER_TOOL, MapColor.COLOR_RED);
+	DARK_MATTER("dark_matter", 4, 12, 12, PETags.Blocks.INCORRECT_FOR_DARK_MATTER_TOOL, MapColor.COLOR_BLACK),
+	RED_MATTER("red_matter", 8, 16, 16, PETags.Blocks.INCORRECT_FOR_RED_MATTER_TOOL, MapColor.COLOR_RED);
 
 	public static final Codec<EnumMatterType> CODEC = StringRepresentable.fromEnum(EnumMatterType::values);
 

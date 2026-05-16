@@ -5,9 +5,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 public enum EnumCollectorTier implements StringRepresentable {
-	MK1("collector_mk1", 4, 10_000),
-	MK2("collector_mk2", 12, 30_000),
-	MK3("collector_mk3", 40, 60_000);
+	MK1("collector_mk1", 256, 16_384),
+	MK2("collector_mk2", 1024, 32_768),
+	MK3("collector_mk3", 4096, 65_536);
 
 	private final String name;
 	private final long genRate;

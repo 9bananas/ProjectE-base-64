@@ -5,9 +5,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 public enum EnumRelayTier implements StringRepresentable {
-	MK1("relay_mk1", 64, 100_000),
-	MK2("relay_mk2", 192, 1_000_000),
-	MK3("relay_mk3", 640, 10_000_000);
+	MK1("relay_mk1", 64, 262_144),
+	MK2("relay_mk2", 256, 1_048_576),
+	MK3("relay_mk3", 1024, 16_777_216);
 
 	private final String name;
 	private final long chargeRate;

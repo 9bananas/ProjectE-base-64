@@ -85,7 +85,7 @@ public class GemFeet extends GemArmorBase {
 				// A modifier of -0.75, Operation.ADD_MULTIPLIED_TOTAL makes it so that we fall at about the same rate as what we do below
 				boolean flying = player.getAbilities().flying;
 				if (!flying && isJumpPressed(player)) {
-					player.addDeltaMovement(VERTICAL_MOVEMENT);
+					//player.addDeltaMovement(VERTICAL_MOVEMENT);
 				}
 				if (!player.onGround()) {
 					Vec3 deltaMovement = player.getDeltaMovement();
